@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  # [Web Application Server config]
+  waserver:
+    build: ./requirements/php/.
+    volumes: 
+    - ./requirements/WordPress:/var/www/html
+
+  # [WebServer config]
+  webserver:
+    build: ./requirements/nginx/.
+    ports:
+    - "443:443"
+    volumes: 
+    - ./requirements/WordPress:/var/www/html
+
+  # [Database Server config]
+  dbserver:
+    build: ./requirements/mariadb/.
