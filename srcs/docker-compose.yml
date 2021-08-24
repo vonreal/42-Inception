@@ -1,5 +1,9 @@
 version: "3.9"
 services:
+  # [Database Server config]
+  dbserver:
+    build: ./requirements/mariadb/.
+
   # [Web Application Server config]
   waserver:
     build: ./requirements/php/.
@@ -13,7 +17,3 @@ services:
     - "443:443"
     volumes: 
     - ./requirements/WordPress:/var/www/html
-
-  # [Database Server config]
-  dbserver:
-    build: ./requirements/mariadb/.

@@ -1,4 +1,4 @@
 all: run
 
 run:
-	docker-compose up --build
+	./srcs/docker-compose up --build
